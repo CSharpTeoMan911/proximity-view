@@ -16,16 +16,26 @@ export function MainPanel({ children }) {
     return (
         <div style={{ width: "100%", height: "100%", }}>
             {children}
-            <div id="alerts-panel" style={{ backgroundColor: "rgba(0, 153, 255, 0.4)", width: "100%", overflowY: "scroll" }}>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                    {typeof (alerts.Alerts) === typeof ({}) ?
-                        Object.keys(alerts.Alerts).map((elem) => {
-                            return <Alert key={elem} date={elem} alerts={alerts.Alerts[elem]} />;
-                        })
-                        : (
+            <div id="alerts-panel" style={{ backgroundColor: "rgba(0, 153, 255, 0.4)", width: "100%", overflow: "auto" }} className="scrollable-blue">
+                {
+                    alerts !== null && alerts !== undefined ? (
+                        alerts.Alerts !== null && alerts.Alerts !== undefined ? (
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                {typeof (alerts.Alerts) === typeof ({}) ?
+                                    Object.keys(alerts.Alerts).map((elem) => {
+                                        return <Alert key={elem} path={`/Alerts/${elem}`} date={elem} alerts={alerts.Alerts[elem]} />;
+                                    })
+                                    : (
+                                        <div></div>
+                                    )}
+                            </div>
+                        ) : (
                             <div></div>
-                        )}
-                </div>
+                        )
+                    ) : (
+                        <div></div>
+                    )
+                }
             </div>
         </div>
     );

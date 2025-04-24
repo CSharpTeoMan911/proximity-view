@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, query, orderByValue, remove } from "firebase/database";
 import firebaseConfig from '../firebase_config.json';
 
 const app = initializeApp(firebaseConfig);
@@ -44,7 +44,7 @@ onAuthStateChanged(auth, (user) => {
 });
 
 
-onValue(ref(database, '/'), (snapshot) => {
+onValue(query(ref(database, '/'), orderByValue()), (snapshot) => {
     const data = snapshot.val();
     if(setAlerts !== null && setAlerts !== undefined){
         setAlerts(data);
@@ -64,5 +64,18 @@ export async function firebaseLogout(){
         window.location.reload();
     }
     catch{}
+}
+
+
+export async function deleteAlert(path, setRefresh){
+    const alertRef = ref(database, path);
+    try{
+        await remove(alertRef);
+        setRefresh(true);
+    }
+    catch(e)
+    {
+        console.error("Error removing document: ", e);
+    }
 }
 

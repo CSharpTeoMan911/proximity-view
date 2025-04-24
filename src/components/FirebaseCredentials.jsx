@@ -11,7 +11,7 @@ export function CredentialsTable() {
     }, []);
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", backgroundColor:"transparent", overflow: "auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", backgroundColor:"transparent", overflow: "auto" }} className="scrollable">
             <div id="credentials-table" className="credentials-table">
                 <img style={{ width: "60%", alignSelf: "center", maxWidth: "400px", marginBottom: "20px" }} src={firebaseLogo} />
 
