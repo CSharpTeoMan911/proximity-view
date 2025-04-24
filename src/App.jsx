@@ -2,6 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { CredentialsTable } from "./components/FirebaseCredentials.jsx";
+import { MainPanel } from "./components/MainPanel.jsx";
+import { Nav } from "./components/Navbar.jsx";
 
 
 function App() {
@@ -9,19 +11,27 @@ function App() {
 
   //document.cookies = "SameSite=Strict;";
 
-  useEffect(()=>{
-    let cookie = document.cookies;
-    setAuth(cookie !== null || cookie !== undefined);
-    console.log(auth);
-  },[])
+  useEffect(() => {
+    let _auth = localStorage.getItem("authenticated");
+
+    console.log(_auth);
+
+    if (_auth !== null && _auth !== undefined) {
+      setAuth(_auth);
+    }
+    else {
+      setAuth(false);
+    }
+  }, [])
+
 
   return (
     <div id="main_div" className="background">
-      <div className="background-mask"> 
-        {!auth ? (
-          <div className="credentials-table">
-            <h1>Welcome back!</h1>
-          </div>
+      <div className="background-mask">
+        {auth ? (
+          <MainPanel>
+            <Nav/>
+          </MainPanel>
         ) : (
           <CredentialsTable />
         )}

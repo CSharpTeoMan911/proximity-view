@@ -1,0 +1,10 @@
+{
+    "apiKey": "AIzaSyA1BcS_-cgW265CM8v1huVnYjQ8ll2IGF0",
+    "authDomain": "proximity-alert-raspberrypi.firebaseapp.com",
+    "databaseURL": "https://proximity-alert-raspberrypi-default-rtdb.europe-west1.firebasedatabase.app",
+    "projectId": "proximity-alert-raspberrypi",
+    "storageBucket": "proximity-alert-raspberrypi.appspot.com",
+    "messagingSenderId": "45539253090",
+    "appId": "1:45539253090:web:def242f7d5c16162726a3b",
+    "measurementId": "G-LVF432D1LY"
+  }

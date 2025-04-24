@@ -65,7 +65,7 @@ div.credentials-table{
   align-content: center;
   height: 'fit-content';
   width: 'fit-content';
-  background: linear-gradient(90deg, rgba(138, 137, 137, 0.6) 20%, rgba(231, 231, 231, 0.6) 80%);
+  background: linear-gradient(90deg, rgba(185, 184, 184, 0.6) 20%, rgba(231, 231, 231, 0.6) 80%);
   border-radius: 5px;
   border: 3px solid rgba(0, 0, 0, 1);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);  
@@ -75,14 +75,14 @@ button.credentials-button{
   width: fit-content;
   align-self: center;
   font-weight: 500;
-  padding: 7px;
+  padding: 6px;
   margin-top: 40px;
   margin-bottom: 30px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   border: 2px solid rgba(0, 0, 0, 0.6);
   color: rgb(168, 168, 168);
-  font-size: calc(15px + 0.5vmin);
+  font-size: calc(13px + 0.5vmin);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);  
 }
 
@@ -105,7 +105,7 @@ p.auth-label{
 input.auth-input{
   align-self: center;
   width: 100%;
-  padding: 5px;
+  padding: 2px;
   font-size: calc(10px + 0.3vmin);
   margin: 0px 0px 10px 0px;
   border-radius: 5px;
@@ -124,3 +124,23 @@ input.auth-input:focus {
 input.auth-input::placeholder {
   color: white;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  padding: 2px;
+  font-size: calc(10px + 0.3vmin);
+  margin: 0px 0px 10px 0px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);  
+};
