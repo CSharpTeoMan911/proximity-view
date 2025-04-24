@@ -1,4 +1,38 @@
 let credentialPaneGeometryInterval = null;
+let credentialPaneGradientFluctuationInterval = null;
+let curr_offset = 50;
+let switch_offset = false;
+
+function credentialPaneGradientFluctuation(){
+    const credential_pane = document.getElementById("credentials-table");
+    let gradient = `linear-gradient(90deg, rgba(138, 137, 137, 0.6) ${curr_offset}%, rgba(231, 231, 231, 0.6) ) ${100 - curr_offset}%`;
+    credential_pane.style.background = gradient;
+
+    if(switch_offset === false){
+        if(curr_offset < 80){
+            curr_offset++;
+        }
+        else{
+            switch_offset = true;
+        }
+    }
+    else{
+        if(curr_offset > 50){
+            curr_offset--;
+        }
+        else{
+            switch_offset = false;
+        }
+    }
+}
+
+export function setCredentialPaneOpacityFluctuation(){
+    if(credentialPaneGradientFluctuationInterval !== undefined){
+        clearInterval(credentialPaneGradientFluctuationInterval);
+    }
+    credentialPaneGradientFluctuationInterval = setInterval(credentialPaneGradientFluctuation, 100);
+}
+
 
 function credentialPaneGeometry(){
     const main_div = document.getElementById("main_div");
@@ -11,7 +45,7 @@ function credentialPaneGeometry(){
             const height = main_div.offsetHeight ;
             
             if(window.innerWidth <= 450 || window.innerWidth == credential_pane.innerWidth){
-                credential_pane.style.width = "92%";
+                credential_pane.style.width = "88%";
                 main_div.style.border = "0px solid transparent";
             }
             else{
@@ -25,6 +59,8 @@ function credentialPaneGeometry(){
 export function setCredentialPaneGeometry(){
     if(credentialPaneGeometryInterval !== null){
         clearInterval(credentialPaneGeometryInterval);
+        curr_offset = 50;
+        switch_offset = false;
     }
     credentialPaneGeometryInterval = setInterval(credentialPaneGeometry, 10);
 }

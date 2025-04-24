@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import "../App.css"
-import {setCredentialPaneGeometry} from "../animations.js";
+import {setCredentialPaneGeometry, setCredentialPaneOpacityFluctuation} from "../animations.js";
 import firebaseLogo from "../images/firebaselogo.png";
 
 export function CredentialsTable(){
     useEffect(()=>{
         setCredentialPaneGeometry();
+        setCredentialPaneOpacityFluctuation();
     }, []);
 
     return (
@@ -26,9 +27,13 @@ export function CredentialsTable(){
                 </div>
             </div>
 
-            <button className="credentials-button" >
+            <button className="credentials-button" onClick={()=>{}}>
                 Login
             </button>
         </div>
     );
+}
+
+function FirebaseAuth(){
+    
 }
