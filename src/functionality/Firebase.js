@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
-import { getDatabase, ref, onValue, query, orderByValue, remove } from "firebase/database";
+import { getDatabase, ref, onValue, query, orderByValue, remove, push } from "firebase/database";
 import firebaseConfig from '../firebase_config.json';
 
 const app = initializeApp(firebaseConfig);
@@ -73,9 +73,35 @@ export async function deleteAlert(path, setRefresh){
         await remove(alertRef);
         setRefresh(true);
     }
-    catch(e)
-    {
-        console.error("Error removing document: ", e);
+    catch{}
+}
+
+export async function simulateAlert(setRefresh){
+    let currentdate = new Date();
+
+    let year = currentdate.getFullYear();
+    let month = currentdate.getMonth() + 1;
+    let day = currentdate.getDate();
+
+    let hours = currentdate.getHours() + 1;
+    let minutes = currentdate.getMinutes() + 1;
+    let seconds = currentdate.getSeconds() + 1;
+
+    hours = hours < 10 ? `0${hours}` : hours;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    month = month < 10 ? `0${month}` : month;
+    day = day < 10 ? `0${day}` : day;
+
+    const baseDate = `${year}${month}${day}`;
+    const alertRef = ref(database, `/Alerts/${baseDate}`);
+
+    try{
+        await push(alertRef, {"alert_name": `${baseDate}${hours}${minutes}${seconds}`});
+        setRefresh(true);
     }
+    catch{}
+    
 }
 
