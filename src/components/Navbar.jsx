@@ -12,13 +12,9 @@ export function Nav() {
     return (
         <nav id="navbar" className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
             <div className="container-fluid">
-                <a className="navbar-brand" style={{ marginRight: "50px" }} href="#">
+                <a className="navbar-brand" style={{ marginRight: "20px" }} href="#">
                     <img src={ProximityView} style={{ width: "230px" }} onClick={firebaseLogout} />
                 </a>
-
-                {/* <a className="nav-link active" style={{marginRight:"30px"}} href="#">
-                    Simulate Alert 🚨
-                </a> */}
 
                 <button class="navbar-toggler" type="button" style={{ marginRight: "20px" }} data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
