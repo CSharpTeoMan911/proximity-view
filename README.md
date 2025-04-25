@@ -38,7 +38,7 @@ Password: Test123
 
 * ⚙️ Tech Stack
   * Frontend: React, TypeScript, HTML, CSS, Bootstrap
-  * Backend Service: Proximity_Alert (Python on Raspberry Pi 4)
+  * Backend Service: Proximity_Alert (C# on Raspberry Pi 4)
   * Realtime Communication: Firebase Realtime Database
   * Authentication & Security: Firebase Auth with admin-only rules
   * Hosting: Firebase Hosting
