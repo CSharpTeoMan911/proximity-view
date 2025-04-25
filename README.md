@@ -1,7 +1,13 @@
 
 ![ProximityView](https://github.com/user-attachments/assets/927a973e-699d-48be-a62b-4cb1d482cae6)
 
-**ProximityView** is a responsive web application built with **React** and **TypeScript** that provides real-time visual feedback for proximity alerts detected by a **Raspberry Pi 4** device. Powered by the [**Proximity_Alert**](https://github.com/CSharpTeoMan911/Proximity_Alert) backend service and **Firebase**, this app is perfect for real-time object detection, smart monitoring, and IoT-based alert systems.
+**ProximityView** is a responsive web application built with **React** and **TypeScript** that provides real-time visual feedback for proximity alerts detected by a **Raspberry Pi 4** device. Powered by the [**Proximity_Alert**](https://github.com/CSharpTeoMan911/Proximity_Alert) backend service and **Firebase**, this app is perfect for real-time object detection, smart monitoring, and IoT-based alert systems. The application is hosted at: https://proximity-alert-raspberrypi.web.app/
+
+```
+# Credentials
+Email: test@gmail.com
+Password: Test123
+```
 
 ![LoginDemo-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8cbe735f-260f-4bcc-96b4-ae2e8d84604f)
 
