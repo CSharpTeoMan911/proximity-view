@@ -12,11 +12,11 @@ export function Nav() {
     return (
         <nav id="navbar" className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
             <div className="container-fluid">
-                <a className="navbar-brand" style={{ marginRight: "20px" }} href="#">
-                    <img src={ProximityView} style={{ width: "230px" }} onClick={firebaseLogout} />
+                <a className="navbar-brand" style={{ marginRight: "25px" }} href="#">
+                    <img src={ProximityView} style={{ width: "200px" }} onClick={firebaseLogout} />
                 </a>
 
-                <button class="navbar-toggler" type="button" style={{ marginRight: "20px" }} data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" style={{ marginRight: "40px", marginTop:"10px" }} data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
